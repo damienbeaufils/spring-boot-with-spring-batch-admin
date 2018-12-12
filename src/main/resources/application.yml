@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: "jdbc:h2:mem:spring-boot-with-spring-batch-admin;FILE_LOCK=FILE;MODE=PostgreSQL"
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  batch:
+    job:
+      enabled: false # disable batch jobs auto-start

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    README:
+    This file is a duplication of "classpath:/org/springframework/batch/admin/web/resources/webapp-config.xml" file
+    in which we do not import "classpath*:/META-INF/spring/batch/bootstrap/manager/data-source-context.xml" file
+    in order to create and manage datasource using Spring Boot default behavior (and not using Spring Batch Admin Manager)
+    -->
+
+    <!-- Workaround for INT-1831 -->
+    <bean id="dummy" class="java.util.Date"/>
+
+    <import resource="classpath*:/META-INF/spring/batch/bootstrap/integration/*.xml" />
+    <import resource="classpath*:/META-INF/spring/batch/bootstrap/resources/*.xml" />
+
+    <import resource="classpath*:/META-INF/spring/batch/bootstrap/manager/env-context.xml" />
+    <import resource="classpath*:/META-INF/spring/batch/bootstrap/manager/execution-context.xml" />
+    <import resource="classpath*:/META-INF/spring/batch/bootstrap/manager/jmx-context.xml" />
+
+    <bean id="parameterUnpackerFilter" class="org.springframework.batch.admin.web.filter.ParameterUnpackerFilter">
+        <property name="prefix" value="unpack_"/>
+        <property name="putEmptyParamsInPath" value="true"/>
+    </bean>
+
+</beans>
