@@ -1,5 +1,7 @@
 # spring-boot-with-spring-batch-admin
 
+[![Build Status](https://travis-ci.org/damienbeaufils/spring-boot-with-spring-batch-admin.svg?branch=master)](https://travis-ci.org/damienbeaufils/spring-boot-with-spring-batch-admin)
+
 An example project that shows how to run Spring Batch Admin within a Spring Boot application. Because it could be a bit tricky.
 
 Run the application and go to http://localhost:8080. You should see the Spring Batch Admin manager and be able to run a sample job that converts csv to xml.
